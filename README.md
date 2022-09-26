@@ -1,4 +1,4 @@
-# Austin-Xuanwen-Team-12
+# Plan Your Travel
 
 <div id="top"></div>
 <!-- PROJECT LOGO -->
@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This repository is copy of the simple PHP CMS except the CMS has been converted to Laravel. The code consists of a simple login process, a dashboard, a place to view/add/edit/delete users, and a place to view/add/edit/delete projects. In an effort to keep the PHP code focused and basic, only the absolute basics have been included. The whole CMS only consists of HTML, PHP, and SQL.
+This web application: Plan Your Travel would help users to create and modify their plans for future travel. The registered users can get the place information from this web application by searching the keyword. This function will achieve with Google Place API. Additionally, the registered users can mark those places with their travel plans in this application.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -93,16 +93,13 @@ php artisan serve
 <!-- Project Scope -->
 ## Project Scope
 
-- Manage Projects (CRUD) -Xuanwen
-- Manage Educations (CRUD) -Xuanwen
-- Manage Skills (CRUD) -Austin
-- Manage Work Experience (CRUD) -Xuanwen
-- Manage Emails (CRUD) -Austin
-- Manage Extra Contents (CRUD) -Xuanwen
-- Manage Blogs (CRUD) -Austin
-- Manage Accounts (CRUD) -Austin
-- Dashboard -Austin
-- CSS style -Austin
+- Manage Plan (CRUD)
+- Manage Marked Place (CRUD)
+- Search Place Information and Saving Place Functionality
+- Navigation Menu
+- Form Validation
+- User Authentication
+- UX/UI Design
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
