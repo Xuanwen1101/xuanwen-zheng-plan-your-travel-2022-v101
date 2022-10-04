@@ -36,27 +36,17 @@
             </div>
         <?php endif; ?>
 
-        <section class="users">
+        <section>
 
-            <h2 class="title">Manage Users</h2>
-            <div class="users__container">
-              <?php foreach($users as $user): ?>
-                <div class="users__card">
-                  <div class="users__text">
-                    <span class="users__id">ID: <?= $user->id ?></span>
-                    <h2 class="users__name"><?= $user->first ?> <?= $user->last ?></h2>
-                    <h3 class="users__email"><?= $user->email ?></h3>
-                  </div>
-                  <div class="users__functions">
-                    <a href="/console/users/edit/<?= $user->id ?>">Edit</a> 
-                    <a href="/console/users/delete/<?= $user->id ?>" class="user__delete">Delete</a> 
-                  </div>
-                </div>
-              <?php endforeach; ?>
+            <h2 class="title">Search List</h2>
+            <div class="objects-container">
+              <span class="users__id">ID: <?= $q ?></span>
             </div>
-            <div class="users__add">
-              <a href="/console/users/add">Add User +</a>
+
+            <div class="object__link">
+              <a href="/console/search/google">Back to Search Page</a>
             </div>
+
         </section>
 
     </body>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>Plan Your Travel</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
             <?php if(Auth::check()): ?>
                 <div class="dashboard__user">Hello, <?= auth()->user()->first ?> <?= auth()->user()->last ?>!</div> 
                 <?php else: ?>
-                <a href="/" class="dashboard__user">Return to My Portfolio</a>
+                <a href="/" class="dashboard__user">Return to Home Page</a>
             <?php endif; ?>
             <ul id="dashboard" class="dashboard__container">
                 <li class="dashboard__link">
@@ -50,7 +50,7 @@
                   </a>
                 </li>
                 <li class="dashboard__link">
-                  <a href="/console/blogs/list">
+                  <a href="/console/search/google">
                   <img src="/icons/blog.svg" alt="Icon for Search Place">
                     Search Place
                   </a>

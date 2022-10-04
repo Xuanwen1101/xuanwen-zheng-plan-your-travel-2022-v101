@@ -6,6 +6,7 @@ use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PlansController;
 use App\Http\Controllers\PlacesController;
+use App\Http\Controllers\SearchController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -56,3 +57,12 @@ Route::post('/console/places/add', [PlacesController::class, 'add'])->middleware
 Route::get('/console/places/edit/{place:id}', [PlacesController::class, 'editForm'])->where('place', '[0-9]+')->middleware('auth');
 Route::post('/console/places/edit/{place:id}', [PlacesController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
 Route::get('/console/places/delete/{place:id}', [PlacesController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');
+
+// Search Routes
+Route::get('/console/search/google', [SearchController::class, 'searchPlace'])->middleware('auth');
+Route::get('/console/search/list', [SearchController::class, 'list'])->middleware('auth');
+// Route::get('/console/places/add', [SearchController::class, 'addForm'])->middleware('auth');
+// Route::post('/console/places/add', [SearchController::class, 'add'])->middleware('auth');
+// Route::get('/console/places/edit/{place:id}', [SearchController::class, 'editForm'])->where('place', '[0-9]+')->middleware('auth');
+// Route::post('/console/places/edit/{place:id}', [SearchController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
+// Route::get('/console/places/delete/{place:id}', [SearchController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');

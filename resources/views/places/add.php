@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>Plan Your Travel</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
               <form method="post" action="/console/places/add" novalidate class="form">
                   <?= csrf_field() ?>
                   <div class="form__field">
-                      <label for="place_name" class="form__label">Name:</label>
+                      <label for="place_name" class="form__label">* Name:</label>
                       <input class="form__input" type="text" name="place_name" id="place_name" value="<?= old('place_name') ?>" required>
               
                       <?php if($errors->first('place_name')): ?>
@@ -47,7 +47,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="address" class="form__label">Address:</label>
+                      <label for="address" class="form__label">* Address:</label>
                       <input class="form__input" type="text" name="address" id="address" value="<?= old('address') ?>" required>
               
                       <?php if($errors->first('address')): ?>
@@ -73,7 +73,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="plan_id" class="form__label">Plan:</label>
+                      <label for="plan_id" class="form__label">* Plan:</label>
                       <select name="plan_id" id="plan_id" class="form__select">
                           <option></option>
                           <?php foreach($plans as $plan): ?>

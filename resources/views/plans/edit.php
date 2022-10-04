@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>Plan Your Travel</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
               <form method="post" action="/console/plans/edit/<?= $plan->id ?>" novalidate class="form">
                   <?= csrf_field() ?>
                   <div class="form__field">
-                      <label for="plan_name" class="form__label">Name:</label>
+                      <label for="plan_name" class="form__label">* Name:</label>
                       <input type="text" class="form__input" name="plan_name" id="plan_name" value="<?= old('plan_name', $plan->plan_name) ?>" required>
               
                       <?php if($errors->first('plan_name')): ?>
@@ -47,7 +47,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label class="form__label" for="trans_type">Transportation Type:</label>
+                      <label class="form__label" for="trans_type">* Transportation Type:</label>
                       <input type="text" class="form__input" name="trans_type" id="trans_type" value="<?= old('trans_type', $plan->trans_type) ?>" required>
               
                       <?php if($errors->first('trans_type')): ?>
@@ -56,7 +56,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="departure" class="form__label">Departure:</label>
+                      <label for="departure" class="form__label">* Departure:</label>
                       <input type="text" class="form__input" name="departure" id="departure" value="<?= old('departure', $plan->departure) ?>" required>
               
                       <?php if($errors->first('departure')): ?>
@@ -65,7 +65,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="destination" class="form__label">Destination:</label>
+                      <label for="destination" class="form__label">* Destination:</label>
                       <input type="text" class="form__input" name="destination" id="destination" value="<?= old('destination', $plan->destination) ?>" required>
               
                       <?php if($errors->first('destination')): ?>
@@ -82,7 +82,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="start_date" class="form__label">Start Date:</label>
+                      <label for="start_date" class="form__label">* Start Date:</label>
                       <input type="date" class="form__input" name="start_date" id="start_date" value="<?= old('start_date', $plan->start_date) ?>" required>
               
                       <?php if($errors->first('start_date')): ?>
@@ -91,7 +91,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="end_date" class="form__label">End Date:</label>
+                      <label for="end_date" class="form__label">* End Date:</label>
                       <input type="date" class="form__input" name="end_date" id="end_date" value="<?= old('end_date', $plan->end_date) ?>" required>
               
                       <?php if($errors->first('end_date')): ?>

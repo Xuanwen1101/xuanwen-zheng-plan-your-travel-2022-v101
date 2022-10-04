@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Portfolio</title>
+        <title>Plan Your Travel</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
               <form method="post" action="/console/users/add" novalidate class="form">
                   <?= csrf_field() ?>
                   <div class="form__field">
-                      <label for="first" class="form__label">First Name:</label>
+                      <label for="first" class="form__label">* First Name:</label>
                       <input type="text" class="form__input" name="first" id="first" value="<?= old('first') ?>" required>
               
                       <?php if($errors->first('first')): ?>
@@ -47,7 +47,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="last" class="form__label">Last Name:</label>
+                      <label for="last" class="form__label">* Last Name:</label>
                       <input type="text" class="form__input" name="last" id="last" value="<?= old('last') ?>" required>
                       <?php if($errors->first('last')): ?>
                           <br>
@@ -55,7 +55,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="email" class="form__label">Email:</label>
+                      <label for="email" class="form__label">* Email:</label>
                       <input type="email" class="form__input" name="email" id="email" value="<?= old('email') ?>" required>
                       <?php if($errors->first('email')): ?>
                           <br>
@@ -63,7 +63,7 @@
                       <?php endif; ?>
                   </div>
                   <div class="form__field">
-                      <label for="password" class="form__label">Password:</label>
+                      <label for="password" class="form__label">* Password:</label>
                       <input type="password" class="form__input" name="password" id="password">
                       <?php if($errors->first('password')): ?>
                           <br>
