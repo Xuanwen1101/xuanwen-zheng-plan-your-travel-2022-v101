@@ -61,7 +61,17 @@ table {
 }
 
 body {
-  background: var(--background-color);
+  /* Background-image token from:https://www.wallpaperflare.com/illustration-of-mountains-surrounded-by-trees-under-white-clouds-wallpaper-ggm */
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+}
+
+.footer {
+  color: var(--card-color);
+  font-size: 1.5;
 }
 
 .header {
@@ -443,7 +453,8 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   gap: 1em;
-  margin: 2em auto;
+  margin: 3em auto;
+  /* min-height: 500px; */
 }
 
 .object-item {
@@ -471,6 +482,16 @@ body {
   font-weight: bold;
   color: var(--font-color-main);
   font-size: 1.5em;
+  text-transform: capitalize;
+  margin-top: 0.5em;
+  line-height: 120%;
+}
+
+.object-text {
+  font-family: var(--heading-font);
+  font-weight: normal;
+  color: var(--font-color-main);
+  font-size: 1.25em;
   text-transform: capitalize;
   margin-top: 0.5em;
   line-height: 120%;
@@ -525,6 +546,19 @@ body {
   font-family: var(--body-font);
 }
 
+.save__link {
+  display: inline-block; 
+  list-style-type: none; 
+  vertical-align: top; 
+  position: relative; 
+  margin-top: 2em;
+}
+
+.save__link a {
+  text-decoration: none;
+  color: var(--upload-color);
+  font-family: var(--body-font);
+}
 
 .object__link {
   text-align: center;
@@ -717,4 +751,95 @@ body {
   .users__email { font-size: 16px; }
 
   .users__functions { font-size: 22px; }
+}
+
+.search-content {
+  /* font-family: 'Cabin', sans-serif;
+  color: #283618;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  margin: 0.5em auto;
+  line-height: 1.5;
+  display: flex; 
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1em; */
+
+  display: flex; 
+  flex-flow: column wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 2em auto;
+}
+
+
+
+.search-item {
+  /* font-weight: bold; */
+  flex:1 0 22%;
+  /* background-color: var(--card-color);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius); */
+  padding: 2em 2em;
+  box-sizing: border-box;
+  /* width: 90%;
+  max-width: 320px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-control {
+  flex:1 0 60%;
+  font-family: 'Cabin', sans-serif;
+  color: #283618;
+  font-size: 1em;
+  padding: 1.2rem;
+  border: none;
+  box-sizing: border-box;
+  /* display: block; */
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0px 5px 10px rgba(82, 94, 105, 0.5);
+  border-radius: 2em;
+  width: 200px;
+  margin-top: 0.5em;
+}
+
+.input-btn {
+  flex:1 0 35%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+.main {
+  min-height: 550px;
+  /* background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* padding: 1em;
+  margin: 0.5em; */
+}
+
+.flex-container-header {
+  display: flex; 
+  flex-flow: row wrap; 
+  gap: 0.5em; 
+  font-family: var(--heading-font);
+  padding: 0 1em;
+}
+
+.logo {
+  flex: 1 0 0;
+}
+
+.home_nav {
+  flex: 3 0 0;
+  margin-top: 3em;
+  font-size: 1.5em;
+  text-align: end;
 }

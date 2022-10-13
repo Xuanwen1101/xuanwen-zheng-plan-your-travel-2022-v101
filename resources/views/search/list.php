@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Plan Your Travel</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="/app.css">
+  <title>Plan Your Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <script src="/app.js"></script>
-        
-    </head>
-    <body>
-        <header class="header">
-            <img class="nav__btn" src="/" alt="">
-            <nav class="header__nav">
-              <ul class="nav__wrapper">
-                <li class="nav__close">X</li>
-                <li class="nav__item"><a href="/console/dashboard">Dashboard</a></li>
-                <li class="nav__line">|</li>
-                <li class="nav__item"><a href="/">Website Home Page</a></li>
-                <li class="nav__line">|</li>
-                <li class="nav__item"><a href="/console/logout">Log Out</a></li>
-              </ul>
-            </nav>
-        </header>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/app.css">
 
-        <?php if(session()->has('message')): ?>
-            <div class="w3-padding w3-margin-top w3-margin-bottom">
-                <div class="w3-red w3-center w3-padding"><?= session()->get('message') ?></div>
-            </div>
-        <?php endif; ?>
+  <script src="/app.js"></script>
 
-        <section>
+</head>
 
-            <h2 class="title">Search List</h2>
-            <div class="objects-container">
-              <span class="users__id">ID: <?= $q ?></span>
-            </div>
+<body>
+  <header class="header">
+    <img class="nav__btn" src="/" alt="">
+    <nav class="header__nav">
+      <ul class="nav__wrapper">
+        <li class="nav__close">X</li>
+        <li class="nav__item"><a href="/console/dashboard">Dashboard</a></li>
+        <li class="nav__line">|</li>
+        <li class="nav__item"><a href="/">Website Home Page</a></li>
+        <li class="nav__line">|</li>
+        <li class="nav__item"><a href="/console/logout">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <div class="object__link">
-              <a href="/console/search/google">Back to Search Page</a>
-            </div>
+  <?php if (session()->has('message')) : ?>
+    <div class="w3-padding w3-margin-top w3-margin-bottom">
+      <div class="w3-red w3-center w3-padding"><?= session()->get('message') ?></div>
+    </div>
+  <?php endif; ?>
 
-        </section>
+  <section class="main">
 
-    </body>
+    <h2 class="title">Search List</h2>
+
+    <div class="objects-container">
+      <?php foreach ($results as $result) : ?>
+        <div class="object-item">
+          <h2 class="object-title"><?= $result['name'] ?></h2>
+          <h3 class="object-text"> Rating: <?= $result['rating'] ?></h3>
+          <div id="object-edit">
+            <ul class="edit__list">
+              <li class="save__link"><a href="/console/search/save/<?= $result['place_id'] ?>">Save</a></li>
+            </ul>
+          </div>
+
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="object__link">
+      <a href="/console/search/google">Back to Search Page</a>
+    </div>
+
+  </section>
+
+</body>
+
 </html>

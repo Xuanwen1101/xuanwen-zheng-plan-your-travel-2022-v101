@@ -36,7 +36,7 @@
             </div>
         <?php endif; ?>
 
-        <section>
+        <section class="main">
 
             <h2 class="title">Manage Places</h2>
             <div class="objects-container">

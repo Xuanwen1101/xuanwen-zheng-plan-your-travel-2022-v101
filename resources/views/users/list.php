@@ -36,7 +36,7 @@
             </div>
         <?php endif; ?>
 
-        <section class="users">
+        <section class="users main">
 
             <h2 class="title">Manage Users</h2>
             <div class="users__container">

@@ -30,7 +30,7 @@
             </nav>
         </header>
 
-        <section>
+        <section class="main">
 
             <h2 class="title">Add Place</h2>
 

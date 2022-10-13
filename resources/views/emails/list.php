@@ -36,7 +36,7 @@
             </div>
         <?php endif; ?>
 
-        <section>
+        <section class="main">
 
             <h2 class="title">Manage Emails</h2>
             <div class="contact__wrapper">

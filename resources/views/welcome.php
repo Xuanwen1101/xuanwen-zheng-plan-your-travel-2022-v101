@@ -1,9 +1,10 @@
 
 <?= view('layout.header') ?>
 
-<section class="w3-padding">
-        
-    <h2 class="w3-text-blue">About the Project</h2>
+<main class="main">
+    <!-- Background-image token from:https://www.wallpaperflare.com/illustration-of-mountains-surrounded-by-trees-under-white-clouds-wallpaper-ggm -->
+
+    <!-- <h2 class="w3-text-blue">About the Project</h2>
 
     <p>
         Quisque felis ex, pellentesque vel elementum eu, bibendum vel massa. Donec id feugiat 
@@ -17,34 +18,8 @@
         <li>PHP</li>
         <li>Laravel</li>
         <li>MySQL</li>
-    </ul>
+    </ul> -->
 
-</section>
-
-<hr>
-
-<section class="w3-padding w3-container">
-
-    <h2 class="w3-text-blue">Plans</h2>
-    <a href="/console/login">
-        Log In
-    </a>
-
-
-</section>
-
-<hr>
-
-<section class="w3-padding">
-
-    <h2 class="w3-text-blue">Contact Me</h2>
-
-    <p>
-        Phone: 111.222.3333
-        <br>
-        Email: <a href="mailto:email@address.com">email@address.com</a>
-    </p>
-
-</section>
+</main>
 
 <?= view('layout.footer') ?>

@@ -30,7 +30,7 @@
             </nav>
         </header>
 
-        <section class="w3-padding">
+        <section class="w3-padding main">
 
             <h2 class="title">Add User</h2>
 

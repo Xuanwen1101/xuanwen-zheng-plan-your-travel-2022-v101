@@ -35,6 +35,9 @@ Route::post('/console/login', [ConsoleController::class, 'login'])->middleware('
 Route::get('/console/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
 
 // User Routes
+Route::get('/console/users/register', [UsersController::class, 'registerForm']);
+Route::post('/console/users/register', [UsersController::class, 'register']);
+
 Route::get('/console/users/list', [UsersController::class, 'list'])->middleware('auth');
 Route::get('/console/users/add', [UsersController::class, 'addForm'])->middleware('auth');
 Route::post('/console/users/add', [UsersController::class, 'add'])->middleware('auth');
@@ -58,11 +61,11 @@ Route::get('/console/places/edit/{place:id}', [PlacesController::class, 'editFor
 Route::post('/console/places/edit/{place:id}', [PlacesController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
 Route::get('/console/places/delete/{place:id}', [PlacesController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');
 
+// Route::get('/console/places/save/{place_id:google_id}', [PlacesController::class, 'saveForm'])->middleware('auth');
+// Route::post('/console/places/save/{place_id:google_id}', [PlacesController::class, 'save'])->middleware('auth');
+
 // Search Routes
 Route::get('/console/search/google', [SearchController::class, 'searchPlace'])->middleware('auth');
 Route::get('/console/search/list', [SearchController::class, 'list'])->middleware('auth');
-// Route::get('/console/places/add', [SearchController::class, 'addForm'])->middleware('auth');
-// Route::post('/console/places/add', [SearchController::class, 'add'])->middleware('auth');
-// Route::get('/console/places/edit/{place:id}', [SearchController::class, 'editForm'])->where('place', '[0-9]+')->middleware('auth');
-// Route::post('/console/places/edit/{place:id}', [SearchController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
-// Route::get('/console/places/delete/{place:id}', [SearchController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');
+Route::get('/console/search/save/{place_id:google_id}', [SearchController::class, 'saveForm'])->middleware('auth');
+Route::post('/console/search/save/{place_id:google_id}', [SearchController::class, 'save'])->middleware('auth');

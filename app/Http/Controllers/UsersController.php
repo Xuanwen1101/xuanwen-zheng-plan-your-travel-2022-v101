@@ -19,6 +19,35 @@ class UsersController extends Controller
 
     }
 
+    public function registerForm()
+    {
+
+        return view('users.register');
+
+    }
+    
+    public function register()
+    {
+
+        $attributes = request()->validate([
+            'first' => 'required',
+            'last' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+        ]);
+
+        $user = new User();
+        $user->first = $attributes['first'];
+        $user->last = $attributes['last'];
+        $user->email = $attributes['email'];
+        $user->password = $attributes['password'];
+        $user->save();
+
+        return redirect('/console/login')
+            ->with('message', 'Registration success!');
+
+    }
+
     public function addForm()
     {
 

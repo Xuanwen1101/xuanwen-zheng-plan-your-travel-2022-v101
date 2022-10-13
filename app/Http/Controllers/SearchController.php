@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use App\Models\Place;
 use App\Models\Plan;
 
+use SKAgarwal\GoogleApi\PlacesApi;
 
 class SearchController extends Controller
 {
@@ -26,8 +27,56 @@ class SearchController extends Controller
         ]);
 
 
+        $googlePlaces = new PlacesApi(env('GOOGLE_MAP_KEY'));
+        $response = $googlePlaces->textSearch($attributes['q'], ["canada", "toronto"]);
+        
+        $results = $response['results'];
+
         return view('search.list', array(
-            'q' => $attributes['q']
+            'results' => $results
         ));
+    }
+
+    public function saveForm(string $place_id)
+    {
+        $googlePlaces = new PlacesApi(env('GOOGLE_MAP_KEY'));
+        $response = $googlePlaces->placeDetails($place_id);
+
+        $result = $response['result'];
+
+        // $place = new Place();
+        // $place->place_name = $result['place_name'];
+        // $place->address = $result['address'];
+        // $place->google_id = $result['google_id'];
+        // $place->user_id = Auth::user()->id;
+
+        return view('search.save', [
+            'result' => $result,
+            'plans' => Plan::all(),
+        ]);
+    }
+
+    public function save(Place $place)
+    {
+
+        $attributes = request()->validate([
+            'place_name' => 'required',
+            'address' => 'required',
+            'google_id' => 'nullable',
+            'note' => 'nullable',
+            'plan_id' => 'required',
+        ]);
+
+        $place = new Place();
+        $place->place_name = $attributes['place_name'];
+        $place->address = $attributes['address'];
+        $place->google_id = $attributes['google_id'];
+        $place->note = $attributes['note'];
+        $place->plan_id = $attributes['plan_id'];
+        $place->user_id = Auth::user()->id;
+        $place->save();
+
+        return redirect('/console/places/list')
+            ->with('message', 'Place has been saved!');
     }
 }

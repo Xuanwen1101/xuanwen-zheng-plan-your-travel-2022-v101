@@ -30,7 +30,7 @@
             </nav>
         </header>
 
-        <section>
+        <section class="main">
             <?php if(Auth::check()): ?>
                 <div class="dashboard__user">Hello, <?= auth()->user()->first ?> <?= auth()->user()->last ?>!</div> 
                 <?php else: ?>
@@ -71,6 +71,8 @@
             </ul>
 
         </section>
+
+        <?= view('layout.footer') ?>
 
     </body>
 </html>
