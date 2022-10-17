@@ -47,9 +47,11 @@
                 <select name="plan_id" id="plan_id" class="form__select">
                     <option></option>
                     <?php foreach ($plans as $plan) : ?>
-                        <option value="<?= $plan->id ?>" <?= $plan->id == old('plan_id') ? 'selected' : '' ?>>
-                            <?= $plan->plan_name ?>
-                        </option>
+                        <?php if ($plan->user_id == auth()->user()->id) : ?>
+                            <option value="<?= $plan->id ?>" <?= $plan->id == old('plan_id') ? 'selected' : '' ?>>
+                                <?= $plan->plan_name ?>
+                            </option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
                 <?php if ($errors->first('plan_id')) : ?>

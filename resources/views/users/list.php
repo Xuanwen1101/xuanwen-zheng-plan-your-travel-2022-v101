@@ -11,17 +11,19 @@
   <h2 class="title">Manage Users</h2>
   <div class="users__container">
     <?php foreach ($users as $user) : ?>
-      <div class="users__card">
-        <div class="users__text">
-          <span class="users__id">ID: <?= $user->id ?></span>
-          <h2 class="users__name"><?= $user->first ?> <?= $user->last ?></h2>
-          <h3 class="users__email"><?= $user->email ?></h3>
+      <?php if ($user->id == auth()->user()->id) : ?>
+        <div class="users__card">
+          <div class="users__text">
+            <span class="users__id">ID: <?= $user->id ?></span>
+            <h2 class="users__name"><?= $user->first ?> <?= $user->last ?></h2>
+            <h3 class="users__email"><?= $user->email ?></h3>
+          </div>
+          <div class="users__functions">
+            <a href="/console/users/edit/<?= $user->id ?>">Edit</a>
+            <a href="/console/users/delete/<?= $user->id ?>" class="user__delete">Delete</a>
+          </div>
         </div>
-        <div class="users__functions">
-          <a href="/console/users/edit/<?= $user->id ?>">Edit</a>
-          <a href="/console/users/delete/<?= $user->id ?>" class="user__delete">Delete</a>
-        </div>
-      </div>
+      <?php endif; ?>
     <?php endforeach; ?>
   </div>
   <div class="users__add">

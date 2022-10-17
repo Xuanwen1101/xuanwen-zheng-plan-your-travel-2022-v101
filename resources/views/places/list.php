@@ -11,20 +11,22 @@
   <h2 class="title">Manage Places</h2>
   <div class="objects-container">
     <?php foreach ($places as $place) : ?>
-      <div class="object-item">
-        <h2 class="object-title"><?= $place->place_name ?></h2>
-        <div id="object-edit">
-          <ul class="edit__list">
-            <li class="edit__link"><a href="/console/places/edit/<?= $place->id ?>">Edit</a></li>
-            <li class="delete__link"><a href="/console/places/delete/<?= $place->id ?>">Delete</a></li>
-          </ul>
+      <?php if ($place->user_id == auth()->user()->id) : ?>
+        <div class="object-item">
+          <h2 class="object-title"><?= $place->place_name ?></h2>
+          <div id="object-edit">
+            <ul class="edit__list">
+              <li class="edit__link"><a href="/console/places/edit/<?= $place->id ?>">Edit</a></li>
+              <li class="delete__link"><a href="/console/places/delete/<?= $place->id ?>">Delete</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      <?php endif; ?>
     <?php endforeach; ?>
   </div>
 
   <div class="object__link">
-    <a href="/console/places/add">New Place</a>
+    <a href="/console/places/add">New Place +</a>
   </div>
 
 </section>
