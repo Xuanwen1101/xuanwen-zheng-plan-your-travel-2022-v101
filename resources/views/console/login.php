@@ -39,40 +39,43 @@
         </div>
     <?php endif; ?>
 
-    <section class="objects-container">
+    <section class="main">
+        
+        <div class="objects-container">
 
-        <form method="post" action="/console/login" novalidate>
+            <form method="post" action="/console/login" novalidate>
 
-            <?= csrf_field() ?>
+                <?= csrf_field() ?>
 
-            <div class="form__field">
-                <label for="email" class="form__label">Email Address:</label>
-                <input type="email" class="form__input" name="email" id="email" value="<?= old('email') ?>" required>
+                <div class="form__field">
+                    <label for="email" class="form__label">Email Address:</label>
+                    <input type="email" class="form__input" name="email" id="email" value="<?= old('email') ?>" required>
 
-                <?php if ($errors->first('email')) : ?>
-                    <br>
-                    <span class="w3-text-red"><?= $errors->first('email'); ?></span>
-                <?php endif; ?>
-            </div>
+                    <?php if ($errors->first('email')) : ?>
+                        <br>
+                        <span class="w3-text-red"><?= $errors->first('email'); ?></span>
+                    <?php endif; ?>
+                </div>
 
-            <br>
+                <br>
 
-            <div class="form__field">
-                <label for="password" class="form__label">Password:</label>
-                <input type="password" class="form__input" name="password" id="password" required>
+                <div class="form__field">
+                    <label for="password" class="form__label">Password:</label>
+                    <input type="password" class="form__input" name="password" id="password" required>
 
-                <?php if ($errors->first('password')) : ?>
-                    <br>
-                    <span class="w3-text-red"><?= $errors->first('password'); ?></span>
-                <?php endif; ?>
-            </div>
+                    <?php if ($errors->first('password')) : ?>
+                        <br>
+                        <span class="w3-text-red"><?= $errors->first('password'); ?></span>
+                    <?php endif; ?>
+                </div>
 
-            <br>
+                <br>
 
-            <button type="submit" class="form__button">Log In</button>
+                <button type="submit" class="form__button">Log In</button>
 
-        </form>
+            </form>
 
+        </div>
     </section>
 
     <?= view('layout.footer') ?>

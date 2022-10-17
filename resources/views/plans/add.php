@@ -109,5 +109,7 @@
 
         </section>
 
+        <?= view('layout.footer') ?>
+
     </body>
 </html>

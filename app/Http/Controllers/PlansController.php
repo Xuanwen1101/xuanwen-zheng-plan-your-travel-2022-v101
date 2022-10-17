@@ -7,13 +7,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use App\Models\Plan;
+use App\Models\Place;
 
 class PlansController extends Controller
 {
     public function list()
     {
         return view('plans.list', [
-            'plans' => Plan::all()
+            'plans' => Plan::all(),
+            'places' => Place::all(),
         ]);
     }
 
