@@ -31,8 +31,6 @@
         </nav>
     </header>
 
-    <hr>
-
     <?php if (session()->has('message')) : ?>
         <div class="w3-padding w3-margin-top w3-margin-bottom">
             <div class="w3-red w3-center w3-padding"><?= session()->get('message') ?></div>
@@ -79,7 +77,3 @@
     </section>
 
     <?= view('layout.footer') ?>
-
-</body>
-
-</html>

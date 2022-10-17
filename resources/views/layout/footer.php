@@ -1,12 +1,12 @@
 
-<hr>
+        <hr>
 
-<footer class="w3-padding footer">
+        <footer class="w3-padding footer">
 
-    Copyright |
-    © Xuanwen Zheng, <?= date('Y') ?>.
+            Copyright |
+            © Xuanwen Zheng, <?= date('Y') ?>.
 
-</footer>
+        </footer>
 
-</body>
+    </body>
 </html>
