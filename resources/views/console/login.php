@@ -21,7 +21,11 @@
 
 
     <header class="header">
-        <img class="nav__btn" src="/" alt="">
+        <span class="logo">
+            <a href="/">
+                <img src="/images/plan_your_travel.png" alt="logo" height="120" />
+            </a>
+        </span>
         <nav class="header__nav">
             <ul class="nav__wrapper">
                 <li class="nav__item"><a href="/">Website Home Page</a></li>
