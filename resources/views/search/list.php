@@ -14,7 +14,9 @@
     <?php foreach ($results as $result) : ?>
       <div class="object-item">
         <h2 class="object-title"><?= $result['name'] ?></h2>
-        <h3 class="object-text"> Rating: <?= $result['rating'] ?></h3>
+        <?php if ($result['rating']) : ?>
+          <h3 class="object-text"> Rating: <?= $result['rating'] ?></h3>
+        <?php endif; ?>
         <div id="object-edit">
           <ul class="edit__list">
             <li class="save__link"><a href="/console/search/save/<?= $result['place_id'] ?>">Save</a></li>
