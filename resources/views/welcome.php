@@ -48,7 +48,7 @@
 
         <div class="objects-container">
             <div class="slogan">
-                Time to Travel
+                Time to Travel!
             </div>
 
             <form action="/console/login" class="home_link">
