@@ -9,26 +9,26 @@
   <ul id="dashboard" class="dashboard__container">
     <li class="dashboard__link">
       <a href="/console/plans/list">
-        <img src="/icons/projects.svg" alt="Icon for Plans List">
-        Your Plan
+        <img src="/icons/plans.svg" alt="Icon for Plans List">
+        Your Plans
       </a>
     </li>
     <li class="dashboard__link">
       <a href="/console/places/list">
-        <img src="/icons/experience.svg" alt="Icon for Places List">
-        Your Place
+        <img src="/icons/places.svg" alt="Icon for Places List">
+        Your Places
       </a>
     </li>
     <li class="dashboard__link">
       <a href="/console/search/google">
-        <img src="/icons/blog.svg" alt="Icon for Search Place">
+        <img src="/icons/search.svg" alt="Icon for Search Place">
         Search Place
       </a>
     </li>
     <li class="dashboard__link">
       <a href="/console/users/list">
         <img src="/icons/users.svg" alt="Icon for User Accounts List">
-        Your Accounts
+        Your Account
       </a>
     </li>
 

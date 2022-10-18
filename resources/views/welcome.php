@@ -46,11 +46,17 @@
 
         <!-- Background-image token from:https://www.wallpaperflare.com/illustration-of-mountains-surrounded-by-trees-under-white-clouds-wallpaper-ggm -->
 
-        <span class="test">Time to Travel!</span>
+        <div class="objects-container">
+            <div class="slogan">
+                Time to Travel!
+            </div>
 
-        <form action="/console/login" class="home_link">
-            <button type="submit" class="form__button">Start Your Plan</button>
-        </form>
+            <form action="/console/login" class="home_link">
+                <button type="submit" class="form__button">Start Your Plan</button>
+            </form>
+        </div>
+
+
 
 
     </main>
