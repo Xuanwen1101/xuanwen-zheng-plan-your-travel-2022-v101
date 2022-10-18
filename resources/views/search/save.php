@@ -5,6 +5,12 @@
     <h2 class="title">Save Place</h2>
 
     <div class="objects-container">
+        <?php if ($image) : ?>
+            <img class="image-container" src="<?= $image ?>" width="500" alt="the selected place image">
+        <?php endif; ?>
+    </div>
+
+    <div class="objects-container">
         <form method="post" action="/console/search/save/<?= $result['place_id'] ?>" novalidate class="form">
             <?= csrf_field() ?>
             <div class="form__field">

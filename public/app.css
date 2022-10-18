@@ -156,6 +156,10 @@ body {
   min-height: 650px;
 }
 
+.main {
+  min-height: 550px;
+}
+
 .footer {
   color: var(--card-color);
   font-size: 1.5;
@@ -244,7 +248,7 @@ body {
   position: absolute;
   display: block;
   color: #ee9d00;
-  font-size: 90px;
+  font-size: 65px;
   letter-spacing: 8px;
   cursor: pointer;
 }
@@ -800,8 +804,28 @@ body {
   margin-top: 0.5em;
 }
 
-.main {
-  min-height: 550px;
+.image-container {
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+
+  display: block;
+  position: relative;
+  border: solid 3px #273b72;
+  padding: 20px 30px;
+  max-width: 600px;
+  width: 70%;
+  font-size: 17px;
+  line-height: 28px;
+  transform: rotate(-1deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.13s ease-in;
+}
+
+.image-container:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -864,7 +888,7 @@ body {
 
   .nav__item,
   .nav__line {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .nav__item a {
@@ -906,6 +930,11 @@ body {
   .contact__card {
     width: 47%;
   }
+
+  .slogan {
+    font-size: 80px;
+  }
+
 }
 
 
@@ -917,7 +946,7 @@ body {
   }
 
   .nav__item {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .dashboard__container {
@@ -962,4 +991,9 @@ body {
   .users__functions {
     font-size: 22px;
   }
+
+  .slogan {
+    font-size: 90px;
+  }
+
 }

@@ -44,15 +44,14 @@ class SearchController extends Controller
 
         $result = $response['result'];
 
-        // $place = new Place();
-        // $place->place_name = $result['place_name'];
-        // $place->address = $result['address'];
-        // $place->google_id = $result['google_id'];
-        // $place->user_id = Auth::user()->id;
+
+        $photo_reference = $result['photos'][0]['photo_reference'];
+        $image = $googlePlaces->photo($photo_reference, $params = ['maxwidth'=>500]);
 
         return view('search.save', [
             'result' => $result,
             'plans' => Plan::all(),
+            'image' => $image,
         ]);
     }
 
