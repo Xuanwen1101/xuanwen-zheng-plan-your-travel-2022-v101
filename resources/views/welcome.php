@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="<?= url('app.css') ?>">
+    <link rel="stylesheet" href="/app.css">
 
-    <script src="<?= url('app.js') ?>"></script>
+    <script src="/app.js"></script>
 
 </head>
 
