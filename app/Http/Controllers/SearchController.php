@@ -28,7 +28,7 @@ class SearchController extends Controller
 
 
         $googlePlaces = new PlacesApi(env('GOOGLE_MAP_KEY'));
-        $response = $googlePlaces->textSearch($attributes['q'], ["canada", "toronto"]);
+        $response = $googlePlaces->textSearch($attributes['q']);
         
         $results = $response['results'];
 
@@ -43,10 +43,16 @@ class SearchController extends Controller
         $response = $googlePlaces->placeDetails($place_id);
 
         $result = $response['result'];
+        // $result = str_replace("'", "\'", json_encode($result));
 
-
-        $photo_reference = $result['photos'][0]['photo_reference'];
-        $image = $googlePlaces->photo($photo_reference, $params = ['maxwidth'=>500]);
+        if ($result['photos']) {
+            $photo_reference = $result['photos'][0]['photo_reference'];
+            $image = $googlePlaces->photo($photo_reference, $params = ['maxwidth'=>500]);
+            
+        } else {
+            $image = "/images/default.png";
+        }
+        
 
         return view('search.save', [
             'result' => $result,
