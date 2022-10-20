@@ -12,18 +12,19 @@
 
   <div class="objects-container">
     <?php foreach ($results as $result) : ?>
-      <div class="object-item">
-        <h2 class="object-title"><?= $result['name'] ?></h2>
-        <?php if ($result['rating']) : ?>
-          <h3 class="object-text"> Rating: <?= $result['rating'] ?></h3>
-        <?php endif; ?>
-        <div id="object-edit">
-          <ul class="edit__list">
-            <li class="save__link"><a href="/console/search/save/<?= $result['place_id'] ?>">Save</a></li>
-          </ul>
+      <?php if ($result['place_id']) : ?>
+        <div class="object-item">
+          <h2 class="object-title"><?= $result['name'] ?></h2>
+          <?php if ($result['rating']) : ?>
+            <h3 class="object-text"> Rating: <?= $result['rating'] ?></h3>
+          <?php endif; ?>
+          <div id="object-edit">
+            <ul class="edit__list">
+              <li class="save__link"><a href="/console/search/save/<?= $result['place_id'] ?>">Save</a></li>
+            </ul>
+          </div>
         </div>
-
-      </div>
+      <?php endif; ?>
     <?php endforeach; ?>
   </div>
 

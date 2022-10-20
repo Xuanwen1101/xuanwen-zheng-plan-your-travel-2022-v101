@@ -9,12 +9,7 @@
       <div class="search-content">
         <img src="/images/PlaceSearch.png" alt="travelmap" width="500" class="">
         <div class="input-group">
-          <input type="text" class="form-control search-item" name="q" placeholder="Search Place">
-          <!-- <span class="input-group-btn">
-          <button type="submit" class="btn btn-default">
-            <span class="fas fa-search"></span>
-          </button>
-        </span> -->
+          <input type="text" class="form-control search-item" name="q" placeholder="Park, Vancouver">
         </div>
       </div>
     </form>
