@@ -15,15 +15,15 @@
         <div class="object-item">
           <?php if ($plan->type_id) : ?>
             <?php if ($plan->type_id == 1) : ?>
-              <img src="/images/car.png" width="220" height="220">
-            <?php elseif ($plan->type_id == 2) : ?>
-              <img src="/images/bus.png" width="220" height="220">
-            <?php elseif ($plan->type_id == 3) : ?>
               <img src="/images/airplane.png" width="220" height="220">
-            <?php elseif ($plan->type_id == 4) : ?>
-              <img src="/images/train.png" width="220" height="220">
-            <?php elseif ($plan->type_id == 5) : ?>
+            <?php elseif ($plan->type_id == 2) : ?>
               <img src="/images/bike.png" width="220" height="220">
+            <?php elseif ($plan->type_id == 3) : ?>
+              <img src="/images/bus.png" width="220" height="220">
+            <?php elseif ($plan->type_id == 4) : ?>
+              <img src="/images/car.png" width="220" height="220">
+            <?php elseif ($plan->type_id == 5) : ?>
+              <img src="/images/train.png" width="220" height="220">
             <?php endif; ?>
           <?php endif; ?>
           <h2 class="object-title"><?= $plan->plan_name ?></h2>
