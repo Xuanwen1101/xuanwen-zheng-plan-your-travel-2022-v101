@@ -32,41 +32,25 @@ class PlansController extends Controller
 
         $attributes = request()->validate([
             'plan_name' => 'required',
-            // 'type_id' => 'required',
-            // 'departure' => 'required',
-            // 'destination' => 'required',
-            // 'note' => 'nullable',
-            // 'start_date' => 'required',
-            // 'end_date' => 'required',
+            'type_id' => 'required',
+            'departure' => 'required',
+            'destination' => 'required',
+            'note' => 'nullable',
+            'start_date' => 'required',
+            'end_date' => 'required',
         ]);
 
-        // $plan = new Plan();
-        // $plan->plan_name = $attributes['plan_name'];
-        // $plan->type_id = $attributes['type_id'];
-        // $plan->departure = $attributes['departure'];
-        // $plan->destination = $attributes['destination'];
-        // $plan->note = $attributes['note'];
-        // $plan->start_date = $attributes['start_date'];
-        // $plan->end_date = $attributes['end_date'];
-        // $plan->user_id = Auth::user()->id;
+        $plan = new Plan();
+        $plan->plan_name = $attributes['plan_name'];
+        $plan->type_id = $attributes['type_id'];
+        $plan->departure = $attributes['departure'];
+        $plan->destination = $attributes['destination'];
+        $plan->note = $attributes['note'];
+        $plan->start_date = $attributes['start_date'];
+        $plan->end_date = $attributes['end_date'];
+        $plan->user_id = Auth::user()->id;
 
-        // $plan->save();
-
-        $type_airplane = new Type();
-        $type_airplane->title = "Airplane";
-        $type_airplane->save();
-        $type_bike = new Type();
-        $type_bike->title = "Bike";
-        $type_bike->save();
-        $type_bus = new Type();
-        $type_bus->title = "Bus";
-        $type_bus->save();
-        $type_car = new Type();
-        $type_car->title = "Car";
-        $type_car->save();
-        $type_train = new Type();
-        $type_train->title = "Train";
-        $type_train->save();
+        $plan->save();
 
 
         return redirect('/console/plans/list')
