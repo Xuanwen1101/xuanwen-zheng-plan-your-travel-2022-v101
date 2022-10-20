@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PlanFactory extends Factory
@@ -16,7 +17,8 @@ class PlanFactory extends Factory
     {
         return [
             'plan_name' => $this->faker->sentence,
-            'trans_type' => $this->faker->sentence,
+            // 'trans_type' => $this->faker->sentence,
+            'type_id' => Type::all()->random(),
             'departure' => $this->faker->sentence,
             'destination' => $this->faker->sentence,
             'note' => $this->faker->paragraph,

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use App\Models\Plan;
 use App\Models\Place;
+use App\Models\Type;
 
 class PlansController extends Controller
 {
@@ -21,7 +22,9 @@ class PlansController extends Controller
 
     public function addForm()
     {
-        return view('plans.add');
+        return view('plans.add', [
+            'types' => Type::all(),
+        ]);
     }
     
     public function add()
@@ -29,7 +32,7 @@ class PlansController extends Controller
 
         $attributes = request()->validate([
             'plan_name' => 'required',
-            'trans_type' => 'required',
+            'type_id' => 'required',
             'departure' => 'required',
             'destination' => 'required',
             'note' => 'nullable',
@@ -39,7 +42,7 @@ class PlansController extends Controller
 
         $plan = new Plan();
         $plan->plan_name = $attributes['plan_name'];
-        $plan->trans_type = $attributes['trans_type'];
+        $plan->type_id = $attributes['type_id'];
         $plan->departure = $attributes['departure'];
         $plan->destination = $attributes['destination'];
         $plan->note = $attributes['note'];
@@ -57,6 +60,7 @@ class PlansController extends Controller
     {
         return view('plans.edit', [
             'plan' => $plan,
+            'types' => Type::all(),
         ]);
     }
 
@@ -65,7 +69,7 @@ class PlansController extends Controller
 
         $attributes = request()->validate([
             'plan_name' => 'required',
-            'trans_type' => 'required',
+            'type_id' => 'required',
             'departure' => 'required',
             'destination' => 'required',
             'note' => 'nullable',
@@ -74,7 +78,7 @@ class PlansController extends Controller
         ]);
 
         $plan->plan_name = $attributes['plan_name'];
-        $plan->trans_type = $attributes['trans_type'];
+        $plan->type_id = $attributes['type_id'];
         $plan->departure = $attributes['departure'];
         $plan->destination = $attributes['destination'];
         $plan->note = $attributes['note'];

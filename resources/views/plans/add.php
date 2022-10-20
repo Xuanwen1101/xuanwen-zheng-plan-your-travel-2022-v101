@@ -17,12 +17,18 @@
                 <?php endif; ?>
             </div>
             <div class="form__field">
-                <label class="form__label" for="trans_type">* Transportation Type:</label>
-                <input type="text" class="form__input" name="trans_type" id="trans_type" value="<?= old('trans_type') ?>" required>
-
-                <?php if ($errors->first('trans_type')) : ?>
+                <label for="type_id" class="form__label">* Transportation Type:</label>
+                <select name="type_id" id="type_id" class="form__select">
+                    <option></option>
+                    <?php foreach ($types as $type) : ?>
+                        <option value="<?= $type->id ?>" <?= $type->id == old('type_id') ? 'selected' : '' ?>>
+                            <?= $type->title ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <?php if ($errors->first('type_id')) : ?>
                     <br>
-                    <span class="w3-text-red"><?= $errors->first('trans_type'); ?></span>
+                    <span class="w3-text-red"><?= $errors->first('type_id'); ?></span>
                 <?php endif; ?>
             </div>
             <div class="form__field">

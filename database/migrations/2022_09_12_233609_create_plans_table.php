@@ -16,7 +16,8 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
             $table->string('plan_name');
-            $table->string('trans_type');
+            // $table->string('trans_type');
+            $table->foreignId('type_id');
             $table->string('departure');
             $table->string('destination');
             $table->date('start_date');

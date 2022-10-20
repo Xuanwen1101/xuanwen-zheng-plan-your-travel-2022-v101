@@ -26,7 +26,6 @@ class SearchController extends Controller
             'q' => 'required'
         ]);
 
-
         $googlePlaces = new PlacesApi(env('GOOGLE_MAP_KEY'));
         $response = $googlePlaces->textSearch($attributes['q']);
         

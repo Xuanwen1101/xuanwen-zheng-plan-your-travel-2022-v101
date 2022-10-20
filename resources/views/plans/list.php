@@ -13,16 +13,16 @@
     <?php foreach ($plans as $plan) : ?>
       <?php if ($plan->user_id == auth()->user()->id) : ?>
         <div class="object-item">
-          <?php if ($plan->trans_type) : ?>
-            <?php if ($plan->trans_type == "Car") : ?>
+          <?php if ($plan->type_id) : ?>
+            <?php if ($plan->type_id == 1) : ?>
               <img src="/images/car.png" width="220" height="220">
-            <?php elseif ($plan->trans_type == "Bus") : ?>
+            <?php elseif ($plan->type_id == 2) : ?>
               <img src="/images/bus.png" width="220" height="220">
-            <?php elseif ($plan->trans_type == "Airplane") : ?>
+            <?php elseif ($plan->type_id == 3) : ?>
               <img src="/images/airplane.png" width="220" height="220">
-            <?php elseif ($plan->trans_type == "Train") : ?>
+            <?php elseif ($plan->type_id == 4) : ?>
               <img src="/images/train.png" width="220" height="220">
-            <?php elseif ($plan->trans_type == "Bike") : ?>
+            <?php elseif ($plan->type_id == 5) : ?>
               <img src="/images/bike.png" width="220" height="220">
             <?php endif; ?>
           <?php endif; ?>
